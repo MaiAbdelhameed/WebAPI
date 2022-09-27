@@ -1,29 +1,30 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import * as React from 'react';
 import './App.css';
 import {Home} from './Home';
 import {Employee} from './Employee';
 import {Department} from './Department';
 import {Navigation} from './Navigation';
 
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 
 function App() {
-  return (
+  return ( 
     <BrowserRouter>
-    <div className="container">
-     <h3 className="m-3 d-flex justify-content-center">
-       React JS Tutorial
-     </h3>
+      <div className="container">
+        <h3 className="m-3 d-flex justify-content-center">
+          React JS Tutorial
+        </h3>
 
-     <Navigation/>
+        <Navigation/>
 
-     <Switch>
-       <Route path='/' component={Home} exact/>
-       <Route path='/department' component={Department}/>
-       <Route path='/employee' component={Employee}/>
-     </Switch>
-    </div>
+        <Routes>
+          <Route path='./Home.js' component={<Home/>} exact/>
+          <Route path='./Department' component={<Department/>}/>
+          <Route path='./Employee' component={<Employee/>}/>
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

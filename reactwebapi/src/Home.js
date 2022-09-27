@@ -2,8 +2,9 @@ import React , {Component} from 'react';
 
 export class Home extends Component{
     render(){
-        <div className='mt-5 d-flex justify-content-left'>
+        return(
+       <div className='mt-5 d-flex justify-content-left'>
             This is Home page.
-        </div>
+        </div>)
     }
 }
